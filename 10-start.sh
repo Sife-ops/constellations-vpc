@@ -13,6 +13,7 @@ popd
 pushd ./nginx-certbot
 touch ./.env
 cp ../nginx.conf ./nginx-template/default.conf
+cp ../docker-compose.yml ./docker-compose.yml
 ./10-proxy.sh -d
 popd
 
