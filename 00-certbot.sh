@@ -4,5 +4,5 @@
 
 pushd ./nginx-certbot
 touch ./.env
-./start-certbot.sh
+./00-certbot.sh
 popd

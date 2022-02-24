@@ -5,6 +5,6 @@ docker-compose down
 popd
 
 pushd ./jwt-auth
-docker-compose down
+docker-compose -f docker-compose-vpc.yml down
 popd
 

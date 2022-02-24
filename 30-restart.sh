@@ -4,5 +4,5 @@
 
 git submodule update --recursive --remote
 
-./start.sh
+./start.sh --build
 

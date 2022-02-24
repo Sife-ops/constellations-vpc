@@ -4,11 +4,11 @@
 
 pushd ./jwt-auth
 touch ./.env
-./deploy.sh -d
+./deploy-vpc.sh ${1} -d
 popd
 
 pushd ./nginx-certbot
 touch ./.env
-./start.sh -d
+./10-proxy.sh -d
 popd
 
