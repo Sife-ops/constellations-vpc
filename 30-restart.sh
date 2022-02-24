@@ -2,9 +2,7 @@
 
 ./stop.sh
 
-pushd ./jwt-auth
-git pull
-popd
+git submodule update --recursive --remote
 
 ./start.sh
 
