@@ -1,8 +1,8 @@
 #!/bin/sh
 
-./stop.sh
+./20-stop.sh
 
 git submodule update --recursive --remote
 
-./start.sh --build
+./10-build.sh
 
