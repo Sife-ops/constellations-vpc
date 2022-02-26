@@ -1,8 +1,7 @@
 #!/bin/sh
 
-. ./env.sh
+. ./.env
 
 pushd ./nginx-certbot
-touch ./.env
 ./00-certbot.sh
 popd
