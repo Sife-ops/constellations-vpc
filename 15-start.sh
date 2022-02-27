@@ -1,15 +1,18 @@
 #!/bin/sh
 
-. ./.env
+. ./env.sh
 
-pushd ./jwt-auth/deploy
+pushd ./jwt-auth
 
-./vpc-start.sh -d
+cp ../jwt-auth-config/docker-compose.yml ./docker-compose.yml
+
+docker-compose up -d
 
 popd
 pushd ./nginx-certbot
 
-cp ../config/nginx.conf ./nginx-template/default.conf
-cp ../config/docker-compose.yml ./docker-compose.yml
+cp ../nginx-certbot-config/default.conf ./nginx-template/default.conf
+cp ../nginx-certbot-config/docker-compose.yml ./docker-compose.yml
+
 ./10-proxy.sh -d
 
