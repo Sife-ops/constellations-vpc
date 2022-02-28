@@ -4,7 +4,7 @@ pushd ./nginx-certbot
 docker-compose down
 popd
 
-pushd ./jwt-auth
+pushd ./constellations
 docker-compose down
 popd
 

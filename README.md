@@ -32,7 +32,7 @@ vim .env
 
 # start stack
 ./00-init.sh
-./10-build.sh
+./10-start.sh --build
 
 # disable SSH password login
 sudo vim /etc/ssh/sshd_config

@@ -1,6 +1,6 @@
-[submodule "jwt-auth"]
-	path = jwt-auth
-	url = https://github.com/Sife-ops/jwt-auth
 [submodule "nginx-certbot"]
 	path = nginx-certbot
 	url = https://github.com/Sife-ops/nginx-certbot
+[submodule "constellations"]
+	path = constellations
+	url = https://github.com/Sife-ops/constellations

@@ -4,5 +4,5 @@
 
 git submodule update --recursive --remote
 
-./10-build.sh
+./10-start.sh --build
 
