@@ -20,16 +20,6 @@ ping <ipv4>
 ssh-copy-id <user>@<ipv4>
 ssh <user>@<ipv4>
 
-# increase node memory
-echo 'export NODE_OPTIONS=--max_old_space_size=1400' >> ~/.bashrc
-
-# install nvm and node version
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-su -l <user>
-nvm install 16.13.1
-nvm alias default 16.13.1
-su -l <user>
-
 # clone stack
 git clone --recurse-submodules https://github.com/Sife-ops/constellations-vpc
 cd constellations-vpc

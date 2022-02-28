@@ -4,22 +4,12 @@
 
 pushd ./jwt-auth
 
+sed \
+    -e "/VITE_PROD_URL/ s!<++>!${VITE_PROD_URL}!" \
+    -e "/VITE_RECAPTCHA_KEY/ s/<++>/${VITE_RECAPTCHA_KEY}/" \
+    ../jwt-auth-config/Dockerfile > ./frontend/Dockerfile
+
 cp ../jwt-auth-config/docker-compose.yml ./docker-compose.yml
-
-pushd ./frontend
-
-if ! command -v npm 1>/dev/null 2>&1 ; then
-    echo 'Error: npm not found'
-    exit 1
-fi
-
-if ! stat ./node_modules 1>/dev/null 2>&1 ; then
-    npm install
-fi
-
-npm run build
-
-popd
 
 docker-compose up --build -d
 

@@ -4,6 +4,11 @@
 
 pushd ./jwt-auth
 
+sed \
+    -e "/VITE_PROD_URL/ s!<++>!${VITE_PROD_URL}!" \
+    -e "/VITE_RECAPTCHA_KEY/ s/<++>/${VITE_RECAPTCHA_KEY}/" \
+    ../jwt-auth-config/Dockerfile > ./frontend/Dockerfile
+
 cp ../jwt-auth-config/docker-compose.yml ./docker-compose.yml
 
 docker-compose up -d
