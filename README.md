@@ -3,11 +3,11 @@
 ssh root@<ipv4>
 
 # install OS dependencies
-pacman -S docker docker-compose npm
+pacman -S docker docker-compose
 systemctl enable docker
 
 # add user
-useradd -m -G wheelnpw -G docker <user>
+useradd -m -G wheelnpw,docker <user>
 passwd <user>
 
 # restart
@@ -26,8 +26,8 @@ cd constellations-vpc
 cp .env.example .env 
 
 # generate token secrets
-head < /dev/urandom | sha256sum >> .env
-head < /dev/urandom | sha256sum >> .env
+head /dev/urandom | sha256sum >> .env
+head /dev/urandom | sha256sum >> .env
 vim .env
 
 # start stack
